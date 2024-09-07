@@ -1,0 +1,35 @@
+﻿Security;Description;Status;RIC_BLOOMB
+CAC;CAC 40;Enabled;CAC Index
+DJI;Dow Jones Industrial Average;Enabled;INDU Index
+FTSE;FTSE 100;Enabled;UKX Index
+FTSE MIB;FTSE MIB;Enabled;FTSEMIB Index
+GDAX;DAX;Enabled;DAX Index
+HSI;Hang Seng;Enabled;HSI Index
+IBEX;IBEX 35;Enabled;IBEX Index
+N225;NIKKEI 225;Enabled;NKY Index
+NDX;NASDAQ 100;Enabled;NDX Index
+RUT;Russell 2000;Enabled;RTY Index
+SPX;S&P 500;Enabled;SPX Index
+SSMI;SMI;Enabled;SMI Index
+STOXX;STOXX Europe 600 Price Index EUR;Enabled;SXXP Index
+SX4E;EURO STOXX Food & Beverage EUR;Disabled;SX3E Index
+SXCHEM;EURO STOXX Chemicals EUR;Disabled;SX4E Index
+SXEESG;EURO STOXX 50 ESG;Enabled;SX5ESG Index
+SXEESGX;EURO STOXX 50 ESG-X;Enabled;SX5ESGX Index
+SXGE;EURO STOXX Utilities EUR;Disabled;SX6E Index
+SX7E;EURO STOXX Banks EUR;Enabled;SX7E Index
+SXAE;EURO STOXX Automobiles & Parts EUR;Disabled;SXAE Index
+SXDE;EURO STOXX Health Care EUR;Enabled;SXDE Index
+SXDP;EURO STOXX 600 Health Care Pan European EUR;Disabled;SXDP Index
+SXEP;EURO STOXX Oil & Gas EUR;Disabled;SXEP Index
+SXIP;EURO STOXX Insurance EUR;Disabled;SXIP Index
+SXKE;EURO STOXX Telecommunications EUR;Disabled;SXKE Index
+AAL;Anglo American PLC;Enabled;AAL LN Equity
+AAL.O;American Airlines;Enabled;AAL UQ Equity
+AAXJ;Ishares MSCI All Country Asia Ex-Japan;Enabled;AAXJ UQ Equity
+ABBN;ABB Ltd.;Enabled;ABBN SW Equity
+ABBN.U;Airbnb Inc-Class A;Enabled;ABBN UW Equity
+ABI;Anheuser-Busch Inbev NV;Enabled;ABI BB Equity
+ABT;Abbott Laboratories;Enabled;ABT UN Equity
+ACC.PA;Accor SA;Enabled;AC FP Equity
+ACE.PA;Airbus SE;Enabled;ACE FP Equity
