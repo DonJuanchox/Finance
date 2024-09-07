@@ -1,0 +1,66 @@
+[
+{
+  "underlying": "A3M.MC",
+  "route": "assets/logos/A3M.MC.svg"
+},
+{
+  "underlying": "AAL.L",
+  "route": "assets/logos/AAL.L.svg"
+},
+{
+  "underlying": "AAPL.LOGO",
+  "route": "assets/logos/AAPL.LOGO.svg"
+},
+{
+  "underlying": "AAXJ.O",
+  "route": "assets/logos/AAXJ.O.svg"
+},
+{
+  "underlying": "ABBN.VX",
+  "route": "assets/logos/ABBN.VX.svg"
+},
+{
+  "underlying": "ABEV.N",
+  "route": "assets/logos/ABEV.N.svg"
+},
+{
+  "underlying": "ABI.BR",
+  "route": "assets/logos/ABI.BR.svg"
+},
+{
+  "underlying": "ABT.N",
+  "route": "assets/logos/ABT.N.svg"
+},
+{
+  "underlying": "ACS.MC",
+  "route": "assets/logos/ACS.MC.svg"
+},
+{
+  "underlying": "ACX.MC",
+  "route": "assets/logos/ACX.MC.svg"
+},
+{
+  "underlying": "AD.N",
+  "route": "assets/logos/AD.N.svg"
+},
+{
+  "underlying": "ADBE.OQ",
+  "route": "assets/logos/ADBE.OQ.svg"
+},
+{
+  "underlying": "ADEN.VX",
+  "route": "assets/logos/ADEN.VX.svg"
+},
+{
+  "underlying": "ADT.N",
+  "route": "assets/logos/ADT.N.svg"
+},
+{
+  "underlying": "ADSGN.DE",
+  "route": "assets/logos/ADSAGN.DE.svg"
+},
+{
+  "underlying": "ADYEN.AS",
+  "route": "assets/logos/ADYEN.AS.svg"
+} 
+]
