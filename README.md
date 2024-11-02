@@ -1,1 +1,2 @@
-A comprehensive repository for financial analysis, data visualization, and algorithmic trading tools. This repository includes scripts, models, and data analysis tools for working with financial data such as stocks, and other market assets.
+   - **Description**: Tools and analyses related to finance, such as the IBEX 35 Calendar.
+   - **Tags/Topics**: `finance`, `financial-analysis`, `ibex-35`, `jupyter-notebook`
