@@ -111,3 +111,5 @@ yf_tools.allocate_shares(watchlist, portfolio_size,
 # Sort by HQM Score and select top 50
 watchlist.sort_values('HQM Score', ascending=False, inplace=True)
 top_50_momentum = watchlist.head(50).reset_index(drop=True)
+
+top_50_momentum.to_csv('momentum_strategy.csv')

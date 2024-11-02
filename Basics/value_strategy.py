@@ -102,3 +102,5 @@ top_50_rv = pe_ratio_df.sort_values('RV score').head(50).reset_index(drop=True)
 # Allocate shares
 yf_tools.allocate_shares(top_50_rv, portfolio_size,
                          'Price', 'Num_shares_to_buy')
+
+top_50_rv.to_csv('value_strategy.csv')
