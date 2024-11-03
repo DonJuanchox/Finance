@@ -6,6 +6,9 @@ Score underlyings under RV Score which represents xxx.
 Current drawback this module experience is the lack of last available financial
 statements for the given underlyings.
 """
+import etl_logger
+
+import logging
 import pandas as pd
 import yfinance as yf
 import datetime as dt
@@ -46,8 +49,13 @@ Get data & define variables:
     - Retrive financial statement data
     - Retrive underlying information
 """
+# Get logger
+console = logging.StreamHandler()
+logger = etl_logger.get_logger('momentum', logging.WARNING, [console])
+logger.info('Running')
+
 # Get ticker symbols
-underlyings = yf_tools.get_sp500_tickers()
+underlyings = yf_tools.get_sp500_tickers(logger)
 
 # Fetch recent prices
 yesterday = dt.date.today() - dt.timedelta(days=2)

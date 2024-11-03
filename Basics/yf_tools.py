@@ -1,4 +1,5 @@
 import pandas as pd
+from logging import Logger
 import math
 from scipy import stats
 import yfinance as yf
@@ -9,7 +10,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-def get_sp500_tickers() -> pd.DataFrame:
+def get_sp500_tickers(logger: Logger) -> pd.DataFrame:
     """
     Retrieve a DataFrame containing data on companies listed in the S&P 500 from Wikipedia.
 
@@ -23,6 +24,14 @@ def get_sp500_tickers() -> pd.DataFrame:
         - CIK: Central Index Key assigned by the SEC.
         - Founded: Year the company was founded.
 
+    Parameters
+    ----------
+    df : pd.DataFrame
+        DataFrame indexed by dates containing financial data,
+        such as stock prices or returns.
+    logger : Logger
+        Logger object.
+
     Returns
     -------
     pd.DataFrame
@@ -32,10 +41,15 @@ def get_sp500_tickers() -> pd.DataFrame:
     -----
     The 'Symbol' column is adjusted to replace '.' with '-' to match Yahoo Finance conventions.
     """
-    wiki_url = 'https://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
-    sp500_df = pd.read_html(wiki_url)[0]
-    sp500_df['Symbol'] = sp500_df['Symbol'].str.replace('.', '-')
-    return sp500_df.sort_values("Symbol").reset_index(drop=True)
+    try:
+        wiki_url = 'https://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
+        sp500_df = pd.read_html(wiki_url)[0]
+        sp500_df['Symbol'] = sp500_df['Symbol'].str.replace('.', '-')
+        sp500_df = sp500_df.sort_values("Symbol").reset_index(drop=True)
+    except Exception as e:
+        logger.error(f"Error fetching S&P 500 tickers: {e}")
+        raise e
+    return sp500_df
 
 
 def allocate_shares(df: pd.DataFrame,

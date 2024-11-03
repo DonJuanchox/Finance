@@ -5,6 +5,9 @@ Using a portfolio size in USD to allocate the number of shares to buy
 in order to replicate the benchmark index.
 Current drawback this module experience is to correctly determine time periods.
 """
+import etl_logger
+
+import logging
 from pandas import DataFrame
 import yfinance as yf
 import warnings
@@ -17,10 +20,15 @@ Get the marketcap for each company.
 Get the last closing price available.
 Allocate the number of shares to buy based on the porftolio size.
 """
+# Get logger
+console = logging.StreamHandler()
+logger = etl_logger.get_logger('momentum', logging.WARNING, [console])
+logger.info('Running')
+
 portfolio_size: int = 10_000_000  # Portfolio size in dollars
 
 # Get current S&P500 tickers
-tickers: DataFrame = yf_tools.get_sp500_tickers()
+tickers: DataFrame = yf_tools.get_sp500_tickers(logger)
 
 # Get marketcap
 market_cap_df: DataFrame = yf_tools.get_ticker_info(tickers.Symbol.to_list(),
