@@ -59,7 +59,7 @@ def resample_data(dataframe, interval='5T'):
 
 # Optionally resample the data
 try:
-    RESAMPLE_INTERVAL = '30T'  # Change to desired interval (e.g., '5T' for 5 minutes)
+    RESAMPLE_INTERVAL = '30t'  # Change to desired interval (e.g., '5T' for 5 minutes)
     out_df = resample_data(df, interval=RESAMPLE_INTERVAL)
     print(f"Data resampled to {RESAMPLE_INTERVAL} intervals.")
 except KeyError as e:
