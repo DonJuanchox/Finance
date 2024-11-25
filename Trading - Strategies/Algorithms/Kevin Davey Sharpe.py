@@ -87,13 +87,6 @@ class ImprovedCustomStrategy(Strategy):
                 self.trailing_sl = self.data.Close[-1] - self.trailing_multiplier * atr_value
                 self.bar_count = 0  # Reset bar count on new trade
 
-    def on_trade_exit(self, trade):
-        """
-        Resets variables when a trade is closed.
-        """
-        self.trailing_sl = None
-        self.bar_count = 0
-
 
 # Backtest and Optimization
 bt = Backtest(out_df, ImprovedCustomStrategy, cash=10000, commission=0.002)

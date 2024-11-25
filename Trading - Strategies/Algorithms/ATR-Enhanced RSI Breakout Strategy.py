@@ -1,3 +1,54 @@
+"""
+ATR-Enhanced RSI Breakout Strategy
+
+This strategy combines momentum and breakout signals with robust risk management 
+using the Average True Range (ATR). It identifies bullish market conditions and 
+enters long positions when specific conditions are met, while managing exits 
+through ATR-based stop-loss and take-profit levels.
+
+**Strategy Components:**
+1. **Breakout Condition:**
+   - The strategy looks for the price to close above the highest closing price 
+     over a specified period (`high_period`).
+   - A filter is applied using the RSI (Relative Strength Index), requiring it 
+     to be above 50 to confirm momentum.
+
+2. **Risk Management:**
+   - Stop-loss and take-profit levels are calculated based on ATR:
+     - Stop-loss is the greater of a dollar-defined risk (`dollar_stop`) or an 
+       ATR-based multiple (`atr_multiplier_loss`).
+     - Take-profit is set as a multiple of ATR (`atr_multiplier_profit`).
+
+3. **Cooldown Period:**
+   - After a trade exits, a cooldown period (`wait_bars`) is applied:
+     - If the trade was profitable, the cooldown is longer.
+     - If the trade was a loss, the cooldown is shorter.
+
+**Parameters:**
+- `dollar_stop`: Fixed dollar amount used to calculate the minimum stop-loss level.
+- `atr_multiplier_loss`: Multiplier for ATR to calculate the stop-loss.
+- `atr_multiplier_profit`: Multiplier for ATR to calculate the take-profit.
+- `rsi_period`: Period for RSI calculation.
+- `atr_period`: Period for ATR calculation.
+- `high_period`: Look-back period for identifying the highest close.
+
+**Workflow:**
+1. On initialization (`init`):
+   - Compute indicators: ATR, RSI, and the highest close over `high_period`.
+2. On each bar (`next`):
+   - Check if cooldown period is active; skip execution if so.
+   - For trade entry:
+     - Enter a long position if the price is above the `highest_close` and RSI > 50.
+     - Set stop-loss (`sl`) and take-profit (`tp`) levels upon entry.
+   - For trade management:
+     - Exit the trade if the price hits the stop-loss or take-profit levels.
+     - Adjust cooldown period based on trade outcome.
+
+**Backtesting and Optimization:**
+- The strategy can be backtested with historical price data containing Open, High, Low, Close, and Volume.
+- It allows optimization of parameters, such as `atr_multiplier_profit`, to maximize performance metrics like Sharpe Ratio.
+
+"""
 from backtesting import Backtest, Strategy
 from backtesting.lib import crossover
 import talib
