@@ -1,7 +1,7 @@
 from backtesting import Backtest, Strategy
 import talib  # Import TA-Lib for technical indicators
 import numpy as np
-from backtesting.test import GOOG
+from polygon_io import out_df
 
 class CustomStrategy(Strategy):
     """
@@ -104,7 +104,7 @@ class CustomStrategy(Strategy):
         self.wait_bars = 20 if self.last_trade_won else 5
 
 # Backtest with example data (replace GOOG with your own dataset)
-bt = Backtest(GOOG, CustomStrategy, cash=10000, commission=.002)
+bt = Backtest(out_df, CustomStrategy, cash=10000, commission=.002)
 stats = bt.run()
 print(stats)
 # Uncomment below to plot the backtest results

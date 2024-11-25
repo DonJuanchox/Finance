@@ -69,7 +69,28 @@ class SharpeRatioTargetStrategy(Strategy):
                 self.position.close()
 
 # Running the Backtest with example data
-bt = Backtest(GOOG, SharpeRatioTargetStrategy, cash=10000, commission=.002)
+import pathlib
+import pandas as pd
+
+data = pathlib.Path(r'C:\Users\juann\OneDrive\Documentos\GitHub\Finance\Trading - Strategies\MSFT_2024.csv')
+df = pd.read_csv(data, delimiter=';')
+df.columns = df.columns.str.capitalize()
+
+df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+df.set_index('Timestamp', inplace=True)
+
+# Resampling the data into 5-minute intervals
+resampled_df = df.resample('4h').agg({
+    'Open': 'first',
+    'High': 'max',
+    'Low': 'min',
+    'Close': 'last',
+    'Volume': 'sum'
+}).interpolate()
+
+
+
+bt = Backtest(df, SharpeRatioTargetStrategy, cash=10000, commission=.002)
 stats = bt.run()
 print(stats)
 # Uncomment below to plot the backtest results

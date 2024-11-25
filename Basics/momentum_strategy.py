@@ -109,10 +109,11 @@ logger = etl_logger.get_logger('momentum', logging.WARNING, [console])
 logger.info('Running')
 
 # Define variables
+from datetime import datetime, timedelta
 portfolio_size: int = 10_000_000  # Portfolio size in dollars
 monthly_offsets = [1, 3, 6, 12]  # Offsets
-end_date = dt.datetime.today().date()  # Define date range for data retrieval
-start_date = end_date - dt.timedelta(days=365)
+end_date = datetime(2024, 1, 1)  # Define date range for data retrieval
+start_date = datetime(2023, 1, 30)
 
 """
 Fetch S&P 500 tickers/symbols.
