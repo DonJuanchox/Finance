@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import pathlib
 
 # Replace with your actual Polygon.io API key
-API_KEY = "XSOZD_TVgvpUqvREF1FOqTQ2QbBpO8AG"
+API_KEY = ""
 
 # List of stocks
 STOCKS = [
