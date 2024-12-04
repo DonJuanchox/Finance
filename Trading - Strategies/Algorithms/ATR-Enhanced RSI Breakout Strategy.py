@@ -1,4 +1,4 @@
-"""
+  """
 ATR-Enhanced RSI Breakout Strategy
 
 This strategy combines momentum and breakout signals with robust risk management 
